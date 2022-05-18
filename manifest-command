@@ -1,0 +1,17 @@
+cat << EOF > output-image/manifest.json
+{
+    "schemaVersion": 2,
+    "config": {
+        "mediaType": "application/vnd.oci.image.config.v1+json",
+        "digest": "sha256:$config_checksum",
+        "size": ${config_size}
+    },
+    "layers": [
+        {
+            "mediaType": "application/vnd.oci.image.layer.v1.tar",
+            "digest": "sha256:${layer_checksum}",
+            "size": ${layer_size}
+        }
+    ]
+}
+EOF

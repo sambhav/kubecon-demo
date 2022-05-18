@@ -1,0 +1,18 @@
+cat << EOF > output-image/config.json
+{
+    "architecture": "arm64",
+    "os": "linux",
+    "config": {
+        "Env": [
+            "PATH=/bin"
+        ],
+        "WorkingDir": "/"
+    },
+    "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+            "sha256:${layer_checksum}"
+        ]
+    }
+}
+EOF
