@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+source demo-magic.sh
+
+p "pack build my-app-image"
+asciinema play pack-recording.cast

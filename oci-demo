@@ -48,4 +48,4 @@ pe "echo '{\"imageLayoutVersion\":\"1.0.0\"}' > output-image/oci-layout"
 pe '# Pushing the image out to a registry!'
 pe "crane push output-image localhost:5001/output-image"
 pe "# Let's run it!"
-pe "docker run -it localhost:5001/output-image sh"
+pe "docker run -it --pull always localhost:5001/output-image sh"
